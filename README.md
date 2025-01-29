@@ -25,8 +25,10 @@ A Python-based cleaning robot that navigates a grid to find and clean grey space
    git clone https://github.com/yourusername/cleaning-robot.git
    cd cleaning-robot
 2. Run the program:
+   
    python vacuum_search.py
-   You can also run the program using python launcher or Pycharm running vacuum_search.py
+   
+   You can also run the program using Python Launcher or Pycharm running vacuum_search.py
 
 
 
