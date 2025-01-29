@@ -1,0 +1,31 @@
+function WeightedDFS(problem) returns solution / failure
+    frontier ← []
+    explored ← {}
+
+    node ← Node(state = problem.initial, path_cost = 0, parent = None, action = None)
+    push node onto frontier
+
+    while frontier is not empty do
+        current_node ← frontier.pop()
+        
+        if current_node.state is the goal then
+            return current_node
+        
+        if current_node.state is not in explored then
+            add current_node.state to explored
+            
+            for each successor in current_node.expand(problem) do
+                successor_cost ← current_node.path_cost + 
+                                 problem.path_cost(current_node, current_node.state, 
+                                                   successor.action, successor.state)
+                
+                successor_node ← Node(state = successor.state, 
+                                      path_cost = successor_cost, 
+                                      parent = current_node, 
+                                      action = successor.action)
+                
+                push successor_node onto frontier
+            
+        sort frontier by path_cost in ascending order
+    
+    return failure
